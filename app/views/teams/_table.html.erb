@@ -1,0 +1,41 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <%= link_to "#{@path}?sort=by_city" do%>
+          City
+        <% end %>
+      </th>
+      <th>
+        <%= link_to "#{@path}?sort=by_nickname" do%>
+          Team Name</th>
+        <% end %>
+      <th>
+        <%= link_to "#{@path}?sort=by_wins" do%>
+          Wins
+        <% end %>
+      </th>
+      <th>
+        <%= link_to "#{@path}?sort=by_losses" do%>
+          Losses
+        <% end %>
+      </th>
+      <th>
+        <%= link_to "#{@path}?sort=by_win_rate" do%>
+          Win Rate
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table-striped">
+    <% teams.each do |team| %>
+      <tr>
+        <td><%=team.city%></td>
+        <td><%=team.nickname%></td>
+        <td><%=team.wins%></td>  
+        <td><%=team.losses%></td>
+        <td><%=team.win_rate%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
